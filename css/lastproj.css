@@ -1,0 +1,85 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(./../fonts/Ubuntu-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(./../fonts/Ubuntu-Light.ttf);
+    font-weight: 300;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --option-height: 50vh;
+    --option-width: 33vw;
+    --bg: rgb(222, 228, 227);
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: rgb(28, 27, 33);
+    }
+}
+
+body {
+    background-color: var(--bg);
+    min-width: 320px;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.wrapper {
+    margin-top: 5vh;
+    position: relative;
+    display: flex;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.options {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-width: 480px;
+    height: var(--option-height);
+    width: 100%;
+    max-width: calc(var(--total-options)* 130px);
+}
+
+.option {
+    background-color: transparent;
+    flex-grow: 1;
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .options {
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: auto;
+    }
+}
