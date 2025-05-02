@@ -27,12 +27,12 @@ let computerScore = 0;
 options.forEach((option) => {
     option.addEventListener("click", () => {
         const playerChoice = getChoiceFromBackground(option.style.backgroundImage);
-        playerDisplay.src = `./images/rock_hand_shake.gif`;
-        computerDisplay.src = `./images/robot_rock_hand_shake.gif`;
+        playerDisplay.src = `./../images/rock_hand_shake.gif`;
+        computerDisplay.src = `./../images/robot_rock_hand_shake.gif`;
         startCountdown(() => {
             let computerChoice = getRandomChoice();
-            computerDisplay.src = `./images/${computerChoice}c.png`;
-            playerDisplay.src = `./images/${playerChoice}.png`;
+            computerDisplay.src = `./../images/${computerChoice}c.png`;
+            playerDisplay.src = `./../images/${playerChoice}.png`;
             const winner = determineWinner(playerChoice, computerChoice);
             if (winner === "player") {
                 playerScore++;
